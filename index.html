@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz Game</title>
     <style>
-        #timer{
+        #clock{
             float:right;
         }
         #container{
@@ -26,14 +26,21 @@
 </head>
 <body>
     
-    <div id="highscore">High Score</div>
-    <div id="timer">Timer</div>
+    
+    <div id="highscore">
+        <h4>High Score</h4></div>
+    <div id="clock">Timer: <span id="timer">0 </span> </div>
     <div id="container">
         <h1 class="heading">Coding Quiz Challenge</h1>
         <div class="introduction">
            <p>Try to answer the questions with in the time limit.Keep in min</p> 
         </div>
         <button id="startbtn">Start Quiz</button>
+
+        <div id="main"></div>
+        <script src="./script.js"></script>
+
     </div>
+
 </body>
 </html>
