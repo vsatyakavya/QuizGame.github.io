@@ -116,6 +116,7 @@ var score = 0;
         }
         else {
             h1El.textContent = "wrong";
+            time -= 10;
         }
 
         i++;
@@ -130,7 +131,7 @@ var score = 0;
         }
         else {
             h1El.textContent = "wrong";
-
+            time -= 10;
         }
         i++;
         looping();
@@ -144,6 +145,7 @@ var score = 0;
         }
         else {
             h1El.textContent = "wrong";
+            time -= 10;
 
         }
         i++;
@@ -156,7 +158,7 @@ var score = 0;
         }
         else {
             h1El.textContent = "wrong";
-
+            time -= 10;
         }
         i++;
         looping();
