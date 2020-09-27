@@ -9,10 +9,15 @@ var buttonEl = document.querySelector("#startbtn");
 
 var mainEl = document.createElement("div");
 var pEl = document.createElement("p");
+
+var optionsEl = document.createElement("div");
 var btn1 = document.createElement("button");
 var btn2 = document.createElement("button");
 var btn3 = document.createElement("button");
 var btn4 = document.createElement("button");
+var h1El = document.createElement("h1");
+
+
 btn1.setAttribute("style", "display:flex;padding:5px;margin:5px;");
 btn2.setAttribute("style", "display:flex;padding:5px;margin:5px;")
 btn3.setAttribute("style", "display:flex;padding:5px;margin:5px;")
@@ -22,10 +27,8 @@ mainEl.setAttribute("style", "text-align:left");
 
 
 
-var score = 0;
 
 buttonEl.addEventListener("click", function () {
-    console.log("hello");
     headingEl.textContent = "";
     introductionEl.textContent = "";
     buttonEl.style.visibility = "hidden";
@@ -42,16 +45,13 @@ buttonEl.addEventListener("click", function () {
     }, 1000);
 
     mainEl.appendChild(pEl);
-    mainEl.appendChild(btn1);
-    mainEl.appendChild(btn2);
-    mainEl.appendChild(btn3);
-    mainEl.appendChild(btn4);
+    mainEl.appendChild(optionsEl)
+    optionsEl.appendChild(btn1);
+    optionsEl.appendChild(btn2);
+    optionsEl.appendChild(btn3);
+    optionsEl.appendChild(btn4);
     containerEl.appendChild(mainEl);
-    // pEl.textContent="Commomly used Data Type DO NOT include:";
-    // btn1.textContent="valuetype";
-    // btn2.textContent="value";
-    // btn3.textContent="java";
-    // btn4.textContent="javascript";
+    containerEl.appendChild(h1El);
 
     var quiz = [{
         "question": "commonly used data types DO NOT include:",
@@ -71,7 +71,7 @@ buttonEl.addEventListener("click", function () {
             "c": "paranthesis",
             "d": "square brackets"
         },
-        "correctAnswer": "quotes"
+        "correctAnswer": "paranthesis"
     },
     {
         "question": "Arrays in javaScript can be used to store",
@@ -81,49 +81,85 @@ buttonEl.addEventListener("click", function () {
             "c": "booleans",
             "d": "all of the above"
         },
-        "correctAnswer": "numbers and strings"
+        "correctAnswer": "all of the above"
     }
 
     ];
 
-    console.log(quiz)
-    console.log("----------------")
-    for (var i = 0; i < quiz.length; i++) {
-        //    var check=JSON.stringify(quiz[i]);
-        pEl.textContent = quiz[i].question;
-        btn1.textContent = quiz[i].answers.a;
-        btn2.textContent = quiz[i].answers.b;
-        btn3.textContent = quiz[i].answers.c;
-        btn4.textContent = quiz[i].answers.d;
+    var i = 0;
+    looping();
+
+    function looping() {
+        if (i < quiz.length) {
+            pEl.textContent = quiz[i].question;
+            btn1.textContent = quiz[i].answers.a;
+            btn2.textContent = quiz[i].answers.b;
+            btn3.textContent = quiz[i].answers.c;
+            btn4.textContent = quiz[i].answers.d;
 
 
+        }
+        else{
+            h1El.textContent=" your score"+score;
+        }
     }
 
-    //    console.log("parse-=->>", JSON.parse(check));
 
-    // mainEl.innerHTML = quiz[i].question;
-
-
-
+    
+var score = 0;
     btn1.addEventListener("click", function () {
 
-        console.log(btn1.textContent)
-        console.log(quiz.correctAnswer)
-        if (btn1.textContent === quiz.correctAnswer) {
+        if (btn1.textContent === quiz[i].correctAnswer) {
             score++;
-            console.log("got point" + score);
+            h1El.textContent = "correct";
+
         }
         else {
-            console.log("lost the point");
+            h1El.textContent = "wrong";
         }
 
+        i++;
+        looping();
 
 
     });
+    btn2.addEventListener("click", function () {
+        if (btn2.textContent === quiz[i].correctAnswer) {
+            score++;
+            h1El.textContent = "correct";
+        }
+        else {
+            h1El.textContent = "wrong";
 
+        }
+        i++;
+        looping();
+    });
+     
 
+    btn3.addEventListener("click", function () {
+        if (btn3.textContent === quiz[i].correctAnswer) {
+            score++;
+            h1El.textContent = "correct";
+        }
+        else {
+            h1El.textContent = "wrong";
 
-}//var quiz= [{"q":"what is texas capital","a":"austin"}, {"c":"President of US", "d":"trump"}]
+        }
+        i++;
+        looping();
+    });
+    btn4.addEventListener("click", function () {
+        if (btn4.textContent === quiz[i].correctAnswer) {
+            score++;
+            h1El.textContent = "correct";
+        }
+        else {
+            h1El.textContent = "wrong";
 
+        }
+        i++;
+        looping();
+    });
 
-)
+});
