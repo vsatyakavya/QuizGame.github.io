@@ -30,20 +30,22 @@ mainEl.setAttribute("style", "text-align:left");
 
 
 
-
+var time = 30;
+var i = 0;
 
 buttonEl.addEventListener("click", function () {
     headingEl.textContent = "";
     introductionEl.textContent = "";
     buttonEl.style.visibility = "hidden";
-    var time = 30;
+    
     var timeInterval = setInterval(function () {
         time--;
         timerEl.textContent = time;
 
         if (time === 0) {
             clearInterval(timeInterval);
-            headingEl.textContent = "game over";
+            showResult();
+
         }
 
     }, 1000);
@@ -91,7 +93,7 @@ buttonEl.addEventListener("click", function () {
 
     ];
 
-    var i = 0;
+    
     looping();
 
     function looping() {
@@ -104,9 +106,17 @@ buttonEl.addEventListener("click", function () {
 
 
         }
-        else{
+        else {
             h4El.textContent=" your score"+score;
+            showResult();
+        
         }
+    }
+
+    function showResult() {
+        mainEl.style.visibility="hidden";
+        optionsEl.style.visibility="hidden";
+        
     }
 
 
@@ -172,5 +182,8 @@ var score = 0;
 
         looping();
     });
-
+ 
 });
+
+
+
