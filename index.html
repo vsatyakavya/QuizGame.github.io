@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
     <style>
+        .optionbuttons{
+            display:block;
+            
+            padding:5px;margin: 5px ;
+            background-color:rgb(33, 89, 199)   ;
+        }
+        #top{
+            display: flex;
+            justify-content: space-between;
+        }
         #clock {
             float: right;
         }
@@ -15,10 +25,11 @@
             margin: 0 auto;
             width: 50%;
             text-align: center;
+            background-color: #fff;
         }
 
         #startbtn {
-            background-color: blue;
+            background-color:rgb(33, 89, 199);
         }
 
         .heading {
@@ -32,9 +43,10 @@
 <body>
 
 
-    <div id="highscore">
-        <button>High Score</button></div>
-    <div id="clock">Timer: <span id="timer">0 </span> </div>
+   <div id="top">
+    <h4>View High Score</h4>
+        <h3 id="clock">Timer: <span id="timer">0 </span> </h3>
+    </div>
     <div id="container">
         <div id="firstPage">
             <h1 class="heading">Coding Quiz Challenge</h1>
@@ -43,8 +55,8 @@
             </div>
             <button id="startbtn">Start Quiz</button>
         </div>
-    </div>
-    <div id="container">
+
+
         <div id="allDone" style="display:none;">
             <h3 class="allDone">All Done</h3>
             <h3>you score:<span id="score"></span></h3>
@@ -52,18 +64,19 @@
                 <input id="initial" type="text" class="allDone">
                 <button id="submitButton" class="allDone">submit</button></h3>
 
-        </div>
-    </div>
-    <div id="container">
-        <div id="finalPage" style="display: none;">
-            <h4 >HighScores</h4>
-            <h2 class="highScoreInfo"></h2>
-            <button>Go Back</button>
-            <button>Clear Highscore</button>
-        </div>
-    </div>
-    </div>
 
+        </div>
+
+
+        <div id="finalPage" style="display: none;">
+            <h4>HighScores</h4>
+            <h2 class="highScoreInfo"></h2>
+            <button id="goback">Go Back</button>
+            <button id="clearHighScore">Clear Highscore</button>
+        </div>
+
+    </div>
+    </div>
     <script src="./script.js"></script>
 
 </body>
