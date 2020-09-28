@@ -1,56 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
     <style>
-        #clock{
-            float:right;
+        #clock {
+            float: right;
         }
-        #container{
+
+        #container {
             max-width: 500px;
             margin: 0 auto;
-            width:50%;
+            width: 50%;
             text-align: center;
         }
-        #startbtn{
+
+        #startbtn {
             background-color: blue;
         }
-       .heading{
-           font-weight: bold;
-           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-       }
-      
-       
 
-       
+        .heading {
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
     </style>
 
 </head>
+
 <body>
-    
-    
+
+
     <div id="highscore">
         <button>High Score</button></div>
     <div id="clock">Timer: <span id="timer">0 </span> </div>
     <div id="container">
-        <h1 class="heading">Coding Quiz Challenge</h1>
-        <div class="introduction">
-           <p>Try to answer the questions with in the time limit.Keep in min</p> 
+        <div id="firstPage">
+            <h1 class="heading">Coding Quiz Challenge</h1>
+            <div class="introduction">
+                <p>Try to answer the questions with in the time limit.Keep in min</p>
+            </div>
+            <button id="startbtn">Start Quiz</button>
         </div>
-        <button id="startbtn">Start Quiz</button>
+    </div>
+    <div id="container">
         <div id="allDone" style="display:none;">
-        <h3 class="allDone" >All Done</h3>
-        <h3>you score:<span id="score"></span></h3>
-        <h3 class="allDone">Enter Initial:
-        <input id="initial" type="text" class="allDone">
-        <button id="submitButton" class="allDone">submit</button></h3>
-  </div>
+            <h3 class="allDone">All Done</h3>
+            <h3>you score:<span id="score"></span></h3>
+            <h3 class="allDone">Enter Initial:
+                <input id="initial" type="text" class="allDone">
+                <button id="submitButton" class="allDone">submit</button></h3>
 
-</div>
+        </div>
+    </div>
+    <div id="container">
+        <div id="finalPage" style="display: none;">
+            <h4 >HighScores</h4>
+            <h2 class="highScoreInfo"></h2>
+            <button>Go Back</button>
+            <button>Clear Highscore</button>
+        </div>
+    </div>
+    </div>
 
     <script src="./script.js"></script>
 
 </body>
+
 </html>

@@ -1,13 +1,16 @@
 var hignScoreEl = document.getElementById("highscore");
 var timerEl = document.getElementById("timer");
 var containerEl = document.getElementById("container");
-var headingEl = document.querySelector(".heading");
-var introductionEl = document.querySelector(".introduction");
+var firstPageEl = document.querySelector("#firstPage");
+// var headingEl = document.querySelector(".heading");
+// var introductionEl = document.querySelector(".introduction");
 var buttonEl = document.querySelector("#startbtn");
-var resultDiv=document.getElementById("allDone");
-var scoreDiv=document.getElementById("score");
-var initialEl=document.getElementById("initial");
-var submitButton=document.getElementById("submitButton");
+var resultDiv = document.getElementById("allDone");
+var scoreDiv = document.getElementById("score");
+var initialEl = document.getElementById("initial");
+var submitButton = document.getElementById("submitButton");
+var finalPageEl=document.getElementById("finalPage");
+var highScoreInfoEl=document.querySelector(".highScoreInfo");
 
 
 
@@ -40,9 +43,11 @@ var timeInterval;
 var initial;
 
 buttonEl.addEventListener("click", function () {
-    headingEl.textContent = "";
-    introductionEl.textContent = "";
-    buttonEl.style.visibility = "hidden";
+    // headingEl.textContent = "";
+    // introductionEl.textContent = "";
+    // buttonEl.style.visibility = "hidden";
+  
+     firstPageEl.setAttribute("style","display:none;");
     
      timeInterval = setInterval(function () {
         time--;
@@ -50,7 +55,7 @@ buttonEl.addEventListener("click", function () {
 
         if (time === 0) {
             clearInterval(timeInterval);
-            
+
 
         }
 
@@ -99,7 +104,7 @@ buttonEl.addEventListener("click", function () {
 
     ];
 
-    
+
     looping();
 
     function looping() {
@@ -112,27 +117,28 @@ buttonEl.addEventListener("click", function () {
 
 
         }
-        else if(time==0|| i==quiz.length) {
-           
+        else if (time == 0 || i == quiz.length) {
+
             showResult();
-            scoreDiv.textContent=score;
-            resultDiv.setAttribute("style","display:block,max-width:500px;margin:0 auto;width:50%;text-align:left");
+            scoreDiv.textContent = score;
+            resultDiv.setAttribute("style", "display:block,max-width:500px;margin:0 auto;width:50%;text-align:left");
             clearInterval(timeInterval);
-        
+
         }
     }
 
     function showResult() {
-        mainEl.style.visibility="hidden";
-        optionsEl.style.visibility="hidden";
-        h4El.textContent="";
-      
-       
+        mainEl.setAttribute("style","display:none");
+        optionsEl.setAttribute("style","display:none");
+
+        h4El.textContent = "";
+
+
     }
 
 
-    
-var score = 0;
+
+    var score = 0;
     btn1.addEventListener("click", function () {
 
         if (btn1.textContent === quiz[i].correctAnswer) {
@@ -161,10 +167,10 @@ var score = 0;
             time -= 10;
         }
         i++;
-        
-      looping();
+
+        looping();
     });
-     
+
 
     btn3.addEventListener("click", function () {
         if (btn3.textContent === quiz[i].correctAnswer) {
@@ -189,33 +195,43 @@ var score = 0;
             time -= 10;
         }
         i++;
-        
+
 
         looping();
     });
 
-    submitButton.addEventListener("click", function() {
+    submitButton.addEventListener("click", function () {
         initial = document.getElementById('initial').value;
         localStorage.setItem(initial, score);
         console.log(initial);
-    });
 
-    hignScoreEl.addEventListener("click", function() {
-        var highScoreUser, highestScore = 0;
+        var highScoreUser="";
+        var highestScore = 0;
         var storedValues = Object.entries(localStorage);
         for (var i in storedValues) {
             var curr = storedValues[i];
             if (curr[1] > highestScore) {
                 highestScore = curr[1];
                 highScoreUser = curr[0];
+                console.log(highestScore);
+                console.log(highScoreUser);
             }
+
         }
+        resultDiv.setAttribute("style","display:none")
+        finalPageEl.setAttribute("style","display:block;color:blue;");
+        highScoreInfoEl.textContent=highScoreUser+" "+highestScore;
+        highScoreInfoEl.setAttribute("style","background-color:skyblue;");
+       // highScoreInfoEl.textContent= highScoreUser;
+       // highScoreInfoEl.setAttribute("style","background-color:#cccccc;")
 
-        console.log('highest score user',highScoreUser);
-
+        console.log('highest score user', highScoreUser);
     });
- 
+
+
+
 });
+ 
 
 
 
