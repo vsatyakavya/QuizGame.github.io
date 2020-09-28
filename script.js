@@ -7,6 +7,7 @@ var buttonEl = document.querySelector("#startbtn");
 
 
 
+
 var mainEl = document.createElement("div");
 var pEl = document.createElement("p");
 
@@ -15,13 +16,16 @@ var btn1 = document.createElement("button");
 var btn2 = document.createElement("button");
 var btn3 = document.createElement("button");
 var btn4 = document.createElement("button");
-var h1El = document.createElement("h1");
+var h4El = document.createElement("h4");
+
+//
 
 
-btn1.setAttribute("style", "display:flex;padding:5px;margin:5px;");
-btn2.setAttribute("style", "display:flex;padding:5px;margin:5px;")
-btn3.setAttribute("style", "display:flex;padding:5px;margin:5px;")
-btn4.setAttribute("style", "display:flex;padding:5px;margin:5px;")
+
+btn1.setAttribute("style", "display:flex;padding:5px;margin:5px;background-color:coral");
+btn2.setAttribute("style", "display:flex;padding:5px;margin:5px;background-color:coral")
+btn3.setAttribute("style", "display:flex;padding:5px;margin:5px;background-color:coral")
+btn4.setAttribute("style", "display:flex;padding:5px;margin:5px;background-color:coral")
 mainEl.setAttribute("style", "text-align:left");
 
 
@@ -51,7 +55,8 @@ buttonEl.addEventListener("click", function () {
     optionsEl.appendChild(btn3);
     optionsEl.appendChild(btn4);
     containerEl.appendChild(mainEl);
-    containerEl.appendChild(h1El);
+    containerEl.appendChild(h4El);
+
 
     var quiz = [{
         "question": "commonly used data types DO NOT include:",
@@ -100,7 +105,7 @@ buttonEl.addEventListener("click", function () {
 
         }
         else{
-            h1El.textContent=" your score"+score;
+            h4El.textContent=" your score"+score;
         }
     }
 
@@ -111,40 +116,42 @@ var score = 0;
 
         if (btn1.textContent === quiz[i].correctAnswer) {
             score++;
-            h1El.textContent = "correct";
+            h4El.textContent = "correct";
 
         }
         else {
-            h1El.textContent = "wrong";
+            h4El.textContent = "wrong";
             time -= 10;
         }
 
         i++;
         looping();
+
 
 
     });
     btn2.addEventListener("click", function () {
         if (btn2.textContent === quiz[i].correctAnswer) {
             score++;
-            h1El.textContent = "correct";
+            h4El.textContent = "correct";
         }
         else {
-            h1El.textContent = "wrong";
+            h4El.textContent = "wrong";
             time -= 10;
         }
         i++;
-        looping();
+        
+      looping();
     });
      
 
     btn3.addEventListener("click", function () {
         if (btn3.textContent === quiz[i].correctAnswer) {
             score++;
-            h1El.textContent = "correct";
+            h4El.textContent = "correct";
         }
         else {
-            h1El.textContent = "wrong";
+            h4El.textContent = "wrong";
             time -= 10;
 
         }
@@ -154,13 +161,15 @@ var score = 0;
     btn4.addEventListener("click", function () {
         if (btn4.textContent === quiz[i].correctAnswer) {
             score++;
-            h1El.textContent = "correct";
+            h4El.textContent = "correct";
         }
         else {
-            h1El.textContent = "wrong";
+            h4El.textContent = "wrong";
             time -= 10;
         }
         i++;
+        
+
         looping();
     });
 
