@@ -1,4 +1,4 @@
-var scoreEl = document.getElementById("highscore");
+var hignScoreEl = document.getElementById("highscore");
 var timerEl = document.getElementById("timer");
 var containerEl = document.getElementById("container");
 var headingEl = document.querySelector(".heading");
@@ -6,6 +6,8 @@ var introductionEl = document.querySelector(".introduction");
 var buttonEl = document.querySelector("#startbtn");
 var resultDiv=document.getElementById("allDone");
 var scoreDiv=document.getElementById("score");
+var initialEl=document.getElementById("initial");
+var submitButton=document.getElementById("submitButton");
 
 
 
@@ -34,7 +36,8 @@ mainEl.setAttribute("style", "text-align:left");
 
 var time = 30;
 var i = 0;
-var timeInterval
+var timeInterval;
+var initial;
 
 buttonEl.addEventListener("click", function () {
     headingEl.textContent = "";
@@ -123,8 +126,8 @@ buttonEl.addEventListener("click", function () {
         mainEl.style.visibility="hidden";
         optionsEl.style.visibility="hidden";
         h4El.textContent="";
+      
        
-        
     }
 
 
@@ -189,6 +192,27 @@ var score = 0;
         
 
         looping();
+    });
+
+    submitButton.addEventListener("click", function() {
+        initial = document.getElementById('initial').value;
+        localStorage.setItem(initial, score);
+        console.log(initial);
+    });
+
+    hignScoreEl.addEventListener("click", function() {
+        var highScoreUser, highestScore = 0;
+        var storedValues = Object.entries(localStorage);
+        for (var i in storedValues) {
+            var curr = storedValues[i];
+            if (curr[1] > highestScore) {
+                highestScore = curr[1];
+                highScoreUser = curr[0];
+            }
+        }
+
+        console.log('highest score user',highScoreUser);
+
     });
  
 });
