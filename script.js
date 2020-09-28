@@ -4,6 +4,8 @@ var containerEl = document.getElementById("container");
 var headingEl = document.querySelector(".heading");
 var introductionEl = document.querySelector(".introduction");
 var buttonEl = document.querySelector("#startbtn");
+var resultDiv=document.getElementById("allDone");
+var scoreDiv=document.getElementById("score");
 
 
 
@@ -32,19 +34,20 @@ mainEl.setAttribute("style", "text-align:left");
 
 var time = 30;
 var i = 0;
+var timeInterval
 
 buttonEl.addEventListener("click", function () {
     headingEl.textContent = "";
     introductionEl.textContent = "";
     buttonEl.style.visibility = "hidden";
     
-    var timeInterval = setInterval(function () {
+     timeInterval = setInterval(function () {
         time--;
         timerEl.textContent = time;
 
         if (time === 0) {
             clearInterval(timeInterval);
-            showResult();
+            
 
         }
 
@@ -106,9 +109,12 @@ buttonEl.addEventListener("click", function () {
 
 
         }
-        else {
-            h4El.textContent=" your score"+score;
+        else if(time==0|| i==quiz.length) {
+           
             showResult();
+            scoreDiv.textContent=score;
+            resultDiv.setAttribute("style","display:block,max-width:500px;margin:0 auto;width:50%;text-align:left");
+            clearInterval(timeInterval);
         
         }
     }
@@ -116,6 +122,8 @@ buttonEl.addEventListener("click", function () {
     function showResult() {
         mainEl.style.visibility="hidden";
         optionsEl.style.visibility="hidden";
+        h4El.textContent="";
+       
         
     }
 
