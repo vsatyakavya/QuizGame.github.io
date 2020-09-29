@@ -171,7 +171,7 @@ function looping() {
     else if (time == 0 || i == quiz.length) {
         
         showResult();
-        scoreDiv.textContent = score;
+
 
         clearInterval(timeInterval);
 
