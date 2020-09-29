@@ -214,9 +214,6 @@ submitButton.addEventListener("click", function () {
 //click go back button
 
 goBackEl.addEventListener("click", function () {
-    // storedValues="";
-    // highScoreInfoEl.textContent = "";
-    // highScoreInfoEl.setAttribute("style", "display:none")
     firstPageEl.setAttribute("style", "display:block");
     finalPageEl.setAttribute("style", "display:none");
      highScoreUser="";
@@ -234,12 +231,11 @@ clearHighScoreEl.addEventListener("click", function () {
 });
 
 viewHighScore.addEventListener("click",function(){
-    resultDiv.setAttribute("style", "display:none")
     viewHighScore.textContent=highestScore;
    setTimeout(function () {
         viewHighScore.textContent = "viewHighScore";
-    }, 1500)
-    looping()
+    }, 1500);
+    
 });
 
 
