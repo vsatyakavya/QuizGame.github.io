@@ -27,7 +27,7 @@
 ![picture](quiz.png)
 
 # Github Page 
-https://vsatyakavya.github.io/PasswordGenerator.github.io/
+ https://vsatyakavya.github.io/QuizGame.github.io/.
 
 
 
