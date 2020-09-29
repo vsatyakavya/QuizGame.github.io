@@ -197,8 +197,7 @@ buttonEl.addEventListener("click", function () {
         initial = document.getElementById('initial').value;
         localStorage.setItem(initial, score);
         console.log(initial);
-
-        var highScoreUser="";
+         var highScoreUser="";
         var highestScore = 0;
         var storedValues = Object.entries(localStorage);
         for (var i in storedValues) {
@@ -211,10 +210,12 @@ buttonEl.addEventListener("click", function () {
             }
 
         }
+        document.getElementById('initial').value = '';
         resultDiv.setAttribute("style","display:none")
         finalPageEl.setAttribute("style","display:block;color:blue;");
         highScoreInfoEl.textContent=highScoreUser+" "+highestScore;
         highScoreInfoEl.setAttribute("style","background-color:skyblue;");
+       
        // highScoreInfoEl.textContent= highScoreUser;
        // highScoreInfoEl.setAttribute("style","background-color:#cccccc;")
 
@@ -230,9 +231,11 @@ buttonEl.addEventListener("click", function () {
     })
     
     clearHighScoreEl.addEventListener("click",function(){
+        localStorage.clear();
         highScoreInfoEl.textContent="";
         highScoreInfoEl.setAttribute("style","display:none")
         console.log("hellooooooooo");
+       
     });
 
 
