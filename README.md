@@ -32,6 +32,6 @@
 
 
 # Github Repository
-https://github.com/vsatyakavya/PasswordGenerator.github.io
+https://github.com/vsatyakavya/QuizGame.github.io
 
 @copyright 2020
