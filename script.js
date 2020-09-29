@@ -48,8 +48,8 @@ var time;
 var i;
 var timeInterval;
 var initial;
-var highScoreUser = "";
-var highestScore = 0;
+var highScoreUser="";
+var highestScore=0;
 
 buttonEl.addEventListener("click", function () {
     time = 60;
@@ -118,7 +118,7 @@ buttonEl.addEventListener("click", function () {
         "correctAnswer": "quotes"
     },
     {
-        "question": "A very usefil tol used during development and debugging for printing content to the debugger is:",
+        "question": "A very useful tool used during development and debugging for printing content to the debugger is:",
         "answers": {
             "a": "javaScript",
             "b": "terminal/bash",
@@ -171,6 +171,8 @@ function looping() {
     else if (time == 0 || i == quiz.length) {
         
         showResult();
+        scoreDiv.textContent = score;
+
         clearInterval(timeInterval);
 
     }
@@ -191,7 +193,6 @@ function showResult() {
 submitButton.addEventListener("click", function () {
     initial = document.getElementById('initial').value;
     localStorage.setItem(initial, score);
-    console.log(initial);
     
     var storedValues = Object.entries(localStorage);
     for (var i in storedValues) {
@@ -208,41 +209,39 @@ submitButton.addEventListener("click", function () {
     finalPageEl.setAttribute("style", "display:block;color:blue;");
     highScoreInfoEl.textContent = highScoreUser + " " + highestScore;
     highScoreInfoEl.setAttribute("style", "background-color:#ccc;text-align:left;");
-
-
-    console.log('highest score user', highScoreUser);
 });
 
 //click go back button
 
 goBackEl.addEventListener("click", function () {
-    storedValues="";
-    highScoreInfoEl.textContent = "";
-    highScoreInfoEl.setAttribute("style", "display:none")
+    // storedValues="";
+    // highScoreInfoEl.textContent = "";
+    // highScoreInfoEl.setAttribute("style", "display:none")
     firstPageEl.setAttribute("style", "display:block");
     finalPageEl.setAttribute("style", "display:none");
+     highScoreUser="";
+      highestScore =0;
 
 })
 //click clear high score
 clearHighScoreEl.addEventListener("click", function () {
-    localStorage.clear();
+   
     storedValues="";
     highScoreInfoEl.textContent = "";
     highScoreInfoEl.setAttribute("style", "display:none")
-    
+    localStorage.clear();
 
 });
 
 viewHighScore.addEventListener("click",function(){
+    resultDiv.setAttribute("style", "display:none")
     viewHighScore.textContent=highestScore;
-    setTimeout(function () {
+   setTimeout(function () {
         viewHighScore.textContent = "viewHighScore";
     }, 1500)
     looping()
-})
+});
 
-
-//});
 
 
 
