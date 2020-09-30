@@ -192,6 +192,8 @@ function showResult() {
 
 submitButton.addEventListener("click", function () {
     initial = document.getElementById('initial').value;
+
+
     localStorage.setItem(initial, score);
     
     var storedValues = Object.entries(localStorage);
@@ -205,6 +207,7 @@ submitButton.addEventListener("click", function () {
 
     }
     document.getElementById('initial').value = '';
+    
     resultDiv.setAttribute("style", "display:none")
     finalPageEl.setAttribute("style", "display:block;color:blue;");
     highScoreInfoEl.textContent = highScoreUser + " " + highestScore;
