@@ -34,4 +34,7 @@ ll
 # Github Repository
 https://github.com/vsatyakavya/QuizGame.github.io
 
+# contact Information
+satyakavya24@gmail.com
+
 @copyright 2020
