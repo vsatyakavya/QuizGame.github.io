@@ -1,4 +1,4 @@
-
+ll
 # Application Does:
 * Quiz Game
 
@@ -33,8 +33,5 @@
 
 # Github Repository
 https://github.com/vsatyakavya/QuizGame.github.io
-
-# contact Info
-satyakavya24@gmail.com
 
 @copyright 2020

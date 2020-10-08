@@ -206,6 +206,7 @@ submitButton.addEventListener("click", function () {
         }
 
     }
+    
     document.getElementById('initial').value = '';
     
     resultDiv.setAttribute("style", "display:none")
