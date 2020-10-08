@@ -25,7 +25,7 @@
 
 # Sample web page
 ![picture](Assets/quiz.png)
-![picture](Assets/quizGame result.png)
+![picture](Assets/quizGameresult.png)
 
 
 # Github Page 
