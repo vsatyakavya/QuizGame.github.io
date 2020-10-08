@@ -24,7 +24,9 @@
 
 
 # Sample web page
-![picture](quiz.png)
+![picture](Assets/quiz.png)
+![picture](Assets/quizGame result.png)
+
 
 # Github Page 
  https://vsatyakavya.github.io/QuizGame.github.io/.
