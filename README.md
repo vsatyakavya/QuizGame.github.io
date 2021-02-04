@@ -1,6 +1,6 @@
 
 # Application Does:
-* This is a quiz game app. According to the user answers gives scores and saves high score.
+* This is a quiz game app. According to the user answers give scores and saves high score to the scoreboard
 
 # Technologies used:
 * HTML, CSS, JavaScript
